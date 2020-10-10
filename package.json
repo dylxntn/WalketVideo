@@ -2,8 +2,8 @@
   "name": "video-chat",
   "version": "1.0.0",
   "main": "index.js",
-  "engines" : { 
-    "node" : ">=14.13.1" 
+  "engines": {
+    "node": ">=14.13.1"
   },
   "license": "MIT",
   "dependencies": {
