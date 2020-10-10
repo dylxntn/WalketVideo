@@ -2,13 +2,15 @@
   "name": "video-chat",
   "version": "1.0.0",
   "main": "index.js",
+  "engines" : { 
+    "node" : ">=14.13.1" 
+  },
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
   },
-
   "scripts": {
     "start": "PROD=true node server.js",
     "postinstall": "cd ./client && yarn"
