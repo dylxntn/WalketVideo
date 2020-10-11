@@ -1,11 +1,11 @@
 require("dotenv").config();
-import express, { static } from "express";
-import { createServer } from "http";
+const express = require("express");
+const http = require("http");
 const app = express();
-const server = createServer(app);
-import socket from "socket.io";
+const server = http.createServer(app);
+const socket = require("socket.io");
 const io = socket(server);
-import { join } from 'path';
+const path = require('path');
 
 const rooms = {};
 
@@ -37,9 +37,9 @@ io.on("connection", socket => {
 });
 
 if (process.env.PROD) {
-    app.use(static(join(__dirname, './client/build')));
+    app.use(express.static(path.join(__dirname, './client/build')));
     app.get('/', (req, res) => {
-        res.sendFile(join(__dirname, './client/build/index.html'));
+        res.sendFile(path.join(__dirname, './client/build/index.html'));
     });
 }
 
